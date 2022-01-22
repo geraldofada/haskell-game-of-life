@@ -10,7 +10,7 @@ main = do
   let qtyIterations = args !! 1
   tableInput <- readFile fileName
   let table = lines tableInput
-  print $ head table
+  printTable table
 
 -- A entrada consiste num txt do seguinte formato:
 --
@@ -25,5 +25,8 @@ main = do
 -- "." : são as células mortas
 -- "v" : as células vivas
 -- "z" : as células zumbis
+
+printTable :: [String] -> IO()
+printTable = mapM_ putStrLn
 
 
